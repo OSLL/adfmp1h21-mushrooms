@@ -2,4 +2,4 @@
 
 ## Android studio
 
-![](./pictires/1.png)
+![1](./pictures/1.png)
