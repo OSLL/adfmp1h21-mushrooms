@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.ifmo.mushrooms">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mushrooms">
-        <activity android:name=".MainActivity">
+        <activity android:name=".PlaceOnMapActivity"></activity>
+        <activity android:name=".PlaceDescriptionActivity" />
+        <activity android:name=".PlacesListActivity" />
+        <activity
+            android:name=".MushroomInfoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DetermineMushroomActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MushroomsCatalogActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AddPlaceActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
