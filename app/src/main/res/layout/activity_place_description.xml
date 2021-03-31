@@ -65,7 +65,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="5dp"
                 android:background="@drawable/rounded_btn_blue"
-                android:text="на карте"
+                android:text="@string/on_map"
                 android:theme="@style/Theme.Button1" />
 
 
@@ -76,7 +76,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:text="Комментарий"
+                android:text="@string/comment"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />

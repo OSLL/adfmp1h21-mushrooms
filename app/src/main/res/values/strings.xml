@@ -2,11 +2,42 @@
     <string name="app_name">Mushrooms</string>
     <string name="places_item">Грибные места</string>
     <string name="catalog_item">Каталог грибов</string>
-    <string name="determine_item">Определить гриб</string>
+    <string name="detect_item">Определить тип гриба</string>
+    <string name="add_place_item">Добавление нового места</string>
+    <string name="place_name">Название места:</string>
+    <string name="comment">Комментарий:</string>
+    <string name="add_comment">добавьте комментарий</string>
+    <string name="back_item">Назад</string>
+    <string name="next_item">Далее</string>
+    <string name="save">Сохранить</string>
+    <string name="to_start_item">В начало</string>
+    <string name="to_list">списком</string>
+    <string name="on_map">на карте</string>
+    <string name="description">Описание</string>
+    <string name="cap">Шляпка</string>
+    <string name="stalk">Ножка</string>
+    <string name="habitat">Распространение</string>
+    <string name="src">Источник</string>
+    <string name="spore">Споровый порошок</string>
+    <string name="spore_layer">Спороносный слой</string>
+    <string name="edible">Съедобный</string>
+    <string name="yes">да</string>
+    <string name="search">Поиск</string>
+    <string name="edible_button">съедобные</string>
+    <string name="not_edible_button">несъедобные</string>
+    <string name="add_place">добавить место</string>
+    <string name="question_cap_color">Какой цвет у шляпки?</string>
+    <string name="question_cap_shape">Какая форма у шляпки?</string>
+    <string name="question_spore_color">Какой цвет под шляпкой?</string>
+    <string name="question_stalk_color">Какой цвет у ножки (ниже кольца, если оно есть)?</string>
+    <string name="question_stalk_shape">"Какая форма у ножки?"</string>
+    <string name="result">Результат:</string>
+
+
     <string-array name="menuItems">
         <item></item>
         <item>Грибные места</item>
         <item>Каталог грибов</item>
-        <item>Определить гриб</item>
+        <item>Определить тип гриба</item>
     </string-array>
 </resources>

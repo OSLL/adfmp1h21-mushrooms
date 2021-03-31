@@ -6,4 +6,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#110F58</color>
     <color name="gray">#C4C4C4</color>
+    <color name="brown">#906146</color>
+    <color name="buff">#DAA06D</color>
+    <color name="cinnamon">#D2691E</color>
+    <color name="gray_mushroom">#9D9D9D</color>
+    <color name="pink">#EE5252</color>
+    <color name="purple">#800080</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#4BD140</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="white_mushroom">#F5EFEF</color>
+    <color name="orange">#FFA500</color>
+    <color name="chocolate">#4A2600</color>
 </resources>

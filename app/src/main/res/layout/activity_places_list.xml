@@ -50,7 +50,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_btn_blue"
-            android:text="на карте"
+            android:text="@string/on_map"
             android:theme="@style/Theme.Button1" />
 
         <Button
@@ -60,7 +60,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_btn_blue"
-            android:text="добавить место"
+            android:text="@string/add_place"
             android:theme="@style/Theme.Button1" />
 
     </LinearLayout>

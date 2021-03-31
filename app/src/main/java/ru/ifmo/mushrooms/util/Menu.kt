@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import ru.ifmo.mushrooms.DetectMushroomActivity
 import ru.ifmo.mushrooms.MainActivity
 import ru.ifmo.mushrooms.MushroomsCatalogActivity
 
@@ -14,7 +15,7 @@ class MainActivityClasses {
         val activityForItemPosition = mapOf(
             1 to MainActivity::class.java,
             2 to MushroomsCatalogActivity::class.java,
-            3 to MushroomsCatalogActivity::class.java
+            3 to DetectMushroomActivity::class.java
         )
     }
 }

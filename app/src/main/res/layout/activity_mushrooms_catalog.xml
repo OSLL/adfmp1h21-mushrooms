@@ -34,7 +34,7 @@
             android:layout_marginLeft="60dp"
             android:background="@null"
             android:cursorVisible="false"
-            android:hint="Поиск"
+            android:hint="@string/search"
             android:imeOptions="actionDone"
             android:maxLines="1"
             android:singleLine="true"
@@ -67,7 +67,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_btn_gray"
-            android:text="съедобные"
+            android:text="@string/edible_button"
             android:textColor="@color/black" />
 
         <Button
@@ -77,7 +77,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_btn_blue"
-            android:text="несъедобные"
+            android:text="@string/not_edible_button"
             android:textColor="@color/white" />
 
     </LinearLayout>
