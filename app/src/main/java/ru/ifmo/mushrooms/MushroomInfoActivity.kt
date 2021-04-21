@@ -6,6 +6,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import kotlinx.android.synthetic.main.activity_mushroom_info.*
+import ru.ifmo.mushrooms.util.configureMenu
 import ru.ifmo.mushrooms.util.getResourceId
 
 class MushroomInfoActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class MushroomInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mushroom_info)
 
+        configureMenu(this, mushroomInfoMenu)
         addInfo()
     }
 
@@ -62,6 +64,7 @@ class MushroomInfoActivity : AppCompatActivity() {
             images.add(SlideModel(R.drawable.nophoto, ScaleTypes.CENTER_CROP))
         }
         imageSlider.setImageList(images)
+        mushroomNameView.text = mushroomName
     }
 
     override fun onResume() {

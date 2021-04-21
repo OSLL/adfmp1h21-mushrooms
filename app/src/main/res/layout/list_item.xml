@@ -31,7 +31,16 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="45pt"
+        android:layout_marginLeft="45pt"
+        android:layout_marginEnd="20pt"
+        android:layout_marginRight="20pt"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="@color/black" />
 
     <ImageView
