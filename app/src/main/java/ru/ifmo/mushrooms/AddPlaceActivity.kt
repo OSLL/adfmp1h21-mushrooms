@@ -2,6 +2,7 @@ package ru.ifmo.mushrooms
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -12,8 +13,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import kotlinx.android.synthetic.main.activity_add_place.*
+import ru.ifmo.mushrooms.util.checkPlaceNameIsCorrect
 import ru.ifmo.mushrooms.util.configureMenu
-import java.io.File
+import ru.ifmo.mushrooms.util.saveImage
 import java.util.*
 
 
@@ -37,11 +39,20 @@ class AddPlaceActivity : AppCompatActivity() {
         addPlaceMenu.setSelection(0)
     }
 
-
     private fun configureEditText() {
         val randomString = UUID.randomUUID().toString().substring(0, RANDOM_STRING_LEN)
         placeName.setText(randomString)
         placeName.setSelection(randomString.length)
+    }
+
+    private fun showPlaceNameError(msg: String) {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Ошибка!")
+            .setMessage(msg)
+            .setPositiveButton("ОК") { dialog, _ ->
+                dialog.cancel()
+            }
+        builder.create().show()
     }
 
     private fun configureButtons() {
@@ -61,8 +72,13 @@ class AddPlaceActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener {
             val name = placeName.text.toString()
+            val maybeError = checkPlaceNameIsCorrect(name)
+            if (maybeError != null) {
+                showPlaceNameError(maybeError.msg)
+                return@setOnClickListener
+            }
             val comment = comment.text.toString()
-            val imageFileName = saveImage(cameraButton.drawable.toBitmap())
+            val imageFileName = saveImage(cameraButton.drawable.toBitmap(), cacheDir)
             val intent = Intent()
             intent.putExtra("name", name)
             intent.putExtra("comment", comment)
@@ -90,7 +106,6 @@ class AddPlaceActivity : AppCompatActivity() {
 
     private fun takePhoto() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE)
     }
 
@@ -102,22 +117,5 @@ class AddPlaceActivity : AppCompatActivity() {
                 cameraButton.setImageBitmap(photo)
             }
         }
-    }
-
-
-    private fun saveImage(finalBitmap: Bitmap): String {
-        val dir = File(cacheDir, "placesImages")
-        if (!dir.exists()) {
-            dir.mkdir()
-        }
-        val fileName = System.currentTimeMillis().toString() + ".jpg"
-        val file = File(dir, fileName)
-        if (file.exists()) file.delete()
-        file.createNewFile()
-        file.outputStream().use { out ->
-            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out)
-            out.flush()
-        }
-        return file.absolutePath
     }
 }

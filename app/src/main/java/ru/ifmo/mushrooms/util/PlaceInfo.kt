@@ -19,8 +19,8 @@ data class PlaceInfo(
     val longitude: Double
 )
 
-fun PlaceInfo.serializePlaceInfo(activity: AppCompatActivity) {
-    val dir = File(activity.cacheDir, "placesInfo")
+fun PlaceInfo.serializePlaceInfo(path: File?): File {
+    val dir = File(path, "placesInfo")
     if (!dir.exists()) {
         dir.mkdir()
     }
@@ -32,6 +32,7 @@ fun PlaceInfo.serializePlaceInfo(activity: AppCompatActivity) {
     file.bufferedWriter().use { out ->
         out.write(info)
     }
+    return file
 }
 
 fun deserializePlaceInfo(file: File): PlaceInfo? {
@@ -64,5 +65,5 @@ fun savePlaceInfoFromIntentData(activity: AppCompatActivity, data: Intent) {
         latitude,
         longitude
     )
-    placeInfo.serializePlaceInfo(activity)
+    placeInfo.serializePlaceInfo(activity.cacheDir)
 }

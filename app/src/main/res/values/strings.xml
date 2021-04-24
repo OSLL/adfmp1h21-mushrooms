@@ -3,7 +3,7 @@
     <string name="places_item">Грибные места</string>
     <string name="catalog_item">Каталог грибов</string>
     <string name="detect_item">Определить тип гриба</string>
-    <string name="add_place_item">Добавление нового места</string>
+    <string name="add_place_item">Добавление места</string>
     <string name="place_name">Название места:</string>
     <string name="comment">Комментарий:</string>
     <string name="add_comment">добавьте комментарий</string>
